@@ -1,0 +1,16 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Modifié Emprunt{% endblock %}
+
+{% block body %}
+    <h1>Modifié Emprunt</h1>
+<a href="{{ path("emprunt_index") }}">
+        <i class="fa fa-reply"></i>
+</a>
+<br>
+<br>
+    {{ include('emprunt/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+    {{ include('emprunt/_delete_form.html.twig') }}
+{% endblock %}

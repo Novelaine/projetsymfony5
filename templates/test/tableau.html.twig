@@ -1,0 +1,58 @@
+{# Le mot-clé 'Extends' indique que le fichier 'hérite' du fichier "base.html.twig". Cela veut dire que le contenu de ses balises 'block' vont remplacer le contenu des balises block de "base.html.twig" #}
+{% extends "base.html.twig" %}
+{% block body %}
+{# TEST : Les tests permettent de tester une variable 
+    syntaxe : variable is test #}
+{% if tableau is defined is not empty %}
+    <h1>Les tableaux :</h1>
+    <h2>Contenu de la variable 'tableau'</h2>
+
+        <ul>
+            <li>{{ tableau[0] }}</li>
+            <li>{{ tableau[1] }}</li>
+            <li>{{ tableau[2] }}</li>
+        </ul>
+
+    <hr>
+
+    {# STRUCTURE ITERATIVE : FOR #}
+    <h2>Equivaut du Foreach :</h2>
+    <ul>
+    {% for valeur in tableau %}
+        <li>{{ valeur }}</li>
+        
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<h2>Boucle FOR :</h2>
+<h3>- Affiche de 1 à 10 du 'tableau'</h3>
+{% for i in 1..10 %}
+    {{ i }} -
+{% endfor %}
+
+<h3>- Affiche chiffre paire entre 1 et 10 du 'tableau'</h3>
+{% for i in 1..10 %}
+    {{ i * 2 }} -
+{% endfor %}
+
+<h3>- Affiche les élément du 'tableau1' </h3>
+<p> Je suis 
+{% for valeur in personne %}
+    {{ valeur ~ " " }}
+{% endfor %}
+</p>
+
+<hr>
+
+<h2>Afficher les élément du 'tableau1' </h2>
+<p>Je m'appelle {{ personne.prenom }} {{ personne.nom }} et j'ai {{ personne.age }} ans.</p>
+
+<h4>concaténation avec twig</h4> 
+<p>Je m'appelle {{ personne.prenom ~ " " ~ personne.nom }} et j'ai {{ personne.age }} ans.</p>
+
+{% endblock %}
+
+{% block test %}
+    est-ce que ça s'affiche ?
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends"base.html.twig" %}
+
+{% block title %}Fiche du livre{% endblock %}
+
+{% block body %}
+
+    <h2>Fiche du livre : {{ livre.titre }}</h2>
+<a href="{{ path("accueil") }}">
+        <i class="fa fa-reply"></i>
+</a>
+<br>
+<br>
+
+    
+    <ul class="list-group">
+        <img src="/img/{{ livre.photo }}" alt="" class="photo">
+        <li class="list-group-item"><strong>Titre :</strong> {{ livre.titre }}</li>
+        <li class="list-group-item"><strong>Auteur :</strong> {{ livre.auteur }}</li>
+        <li class="list-group-item"><strong>Catégorie : </strong> {{ livre.categorie.titre }}</li>
+        <li class="list-group-item"><strong>Description : </strong> {{ livre.description }}</li>
+
+
+    </ul>
+
+
+{% endblock %}
+
+
+

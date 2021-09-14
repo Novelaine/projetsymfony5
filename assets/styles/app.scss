@@ -1,0 +1,20 @@
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "~bootstrap/scss/bootstrap";
+body {
+    background-color: lightgray;
+}
+footer,h1,h2{
+    text-align: center;
+    margin: 25px;
+}
+.card-columns .card-footer{
+    background-color: rgba(247, 229, 192, 0.815);
+}
+
+img.miniature{
+    width: 50px;
+}
+img.photo{
+    width: 24%;
+    margin: auto;
+}

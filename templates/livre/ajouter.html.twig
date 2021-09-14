@@ -1,0 +1,41 @@
+{% extends"admin/base.html.twig" %}
+
+{% block title %}Ajouter un livre{% endblock %}
+
+{% block body %}
+<h2>Ajouter un livre</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="titre">Titre</label>
+            <input type="text" name="titre" id="titre" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="auteur">Auteur</label>
+            <input type="text" name="auteur" id="auteur" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="photo">Couverture</label>
+            <input type="file" name="photo" id="photo" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description" class="form-control">
+        </div>
+
+         <div class="form-group">
+            <label for="categorie">Catégorie</label>
+                <select name="categorie" id="categorie" class="form-control">
+                <option value=""></option>
+                {% for categorie in categories %}
+                    <option value="{{ categorie.id }}">{{ categorie.titre }}</option>
+                {% endfor %}
+           </select>
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-primary mr-5">Enregistrer</button>
+            
+            <button type="reset" class="btn btn-danger float-right">Effacer</button>
+        </div>
+
+{% endblock %}

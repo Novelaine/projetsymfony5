@@ -1,0 +1,15 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}New Abonne{% endblock %}
+
+{% block body %}
+    <h1>Create new Abonne</h1>
+<a href="{{ path("abonne_index") }}">
+    <i class="fa fa-reply"></i>
+</a>
+<br>
+<br>
+    {{ include('abonne/_form.html.twig') }}
+
+
+{% endblock %}
